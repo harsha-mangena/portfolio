@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope, FaExternalLinkAlt, FaChevronRight } from 'react-icons/fa';
+import {FaExternalLinkAlt, FaChevronRight } from 'react-icons/fa';
 
 const Portfolio = () => {
   const [activeTab, setActiveTab] = useState('home');
