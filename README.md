@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Vamsi Sai Ranga Sri Harsha Mangina | AI/ML Engineer Portfolio
 
-## Getting Started
+Modern, production-ready portfolio showcasing expertise in building scalable LLM, NLP, Computer Vision, and Agentic AI systems.
 
-First, run the development server:
+**Live Site:** https://vamsi-portfolio.onrender.com (update with your custom domain after assignment)
+
+## ✨ Highlights
+
+- **Stunning UI/UX**: Premium dark theme with smooth Framer Motion animations, interactive elements, and responsive design.
+- **Interactive Red Team Simulator**: Demo of the Probe project - test LLM prompts against 100+ attack vectors in-browser.
+- **Impact-Driven Content**: Real metrics from production systems (50K+ daily predictions, +19pp accuracy improvements, sub-500ms inference).
+- **Full-Stack Ready**: Deployed on Render with optimized build pipeline.
+
+## 🚀 Tech Stack
+
+- Next.js 15 (App Router, Turbopack)
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- React 19
+- Lucide Icons + React Icons
+
+## 🛠️ Local Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📦 Deployment on Render
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This repo includes `render.yaml` for one-click deploy:
 
-## Learn More
+1. Connect repo to [Render.com](https://render.com)
+2. It auto-detects the config or use Blueprint deploy.
+3. Build & deploy happens automatically on push to `main`.
 
-To learn more about Next.js, take a look at the following resources:
+### Assigning a Custom Domain (e.g. vamsisai.dev or portfolio.vamsisai.com)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. In Render Dashboard > Your Service > Settings > Custom Domains
+2. Add your domain (Render provides DNS targets)
+3. Update DNS records at your registrar (CNAME or A record as instructed)
+4. Wait for SSL provisioning (usually <5 min)
+5. Update the `name` in render.yaml and any hardcoded URLs if changing service name.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+No more random subdomains!
 
-## Deploy on Vercel
+## 📄 Resume
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Add your latest resume.pdf to the `public/` folder for direct download link (currently links to contact for latest version).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📝 Content Updates
+
+All content is driven from the comprehensive resume details including:
+- Professional Summary & Key Metrics
+- Detailed Experience with quantifiable impacts
+- Categorized Skills
+- Featured Projects (Probe, Agent Swarm, AetherOS, GraphRAG, Fraud Detection)
+- Education, Certifications & Publications
+
+## 🤝 Connect
+
+- Email: sairanga.mangina@gmail.com
+- GitHub: https://github.com/harsha-mangena
+- LinkedIn: https://linkedin.com/in/mvsrsh
+- Phone: (864)-407-1871
+
+Built with ❤️ for the AI engineering community. Contributions and feedback welcome!
