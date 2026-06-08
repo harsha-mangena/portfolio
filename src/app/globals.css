@@ -3,19 +3,124 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-mono);
+  --accent: #eab308; /* Yellow for continuity with retro hacker vibe, or change to #22d3ee cyan */
+  --accent-dark: #ca8a04;
+  --bg: #09090b;
+  --card: #18181b;
+  --border: #3f3f46;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Premium Portfolio Styles */
+.glass {
+  background: rgba(24, 24, 27, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(63, 63, 70, 0.5);
+}
+
+.section-heading {
+  font-size: 2.5rem;
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.timeline-dot {
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.experience-card:hover .timeline-dot {
+  background-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(234, 179, 8, 0.2);
+}
+
+.skill-pill {
+  transition: all 0.2s ease;
+}
+
+.skill-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  border-color: var(--accent);
+}
+
+.project-card {
+  transition: transform 0.4s cubic-bezier(0.23, 1.0, 0.32, 1), 
+              box-shadow 0.4s cubic-bezier(0.23, 1.0, 0.32, 1),
+              border-color 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  border-color: var(--accent);
+}
+
+.nav-link {
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav-link.active::after,
+.nav-link:hover::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, var(--accent), var(--accent-dark));
+}
+
+.metric-value {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Interactive Demo Styles */
+.demo-terminal {
+  font-family: var(--font-mono);
+  background: #111113;
+}
+
+.attack-btn {
+  transition: all 0.1s ease;
+}
+
+.attack-btn.active {
+  background-color: #eab308;
+  color: #09090b;
+  border-color: #eab308;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #18181b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #52525b;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #eab308;
 }
