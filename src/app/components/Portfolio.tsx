@@ -3,8 +3,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Github, Linkedin, Mail, ExternalLink, Calendar, MapPin, Award, 
-  Zap, Target, Shield, Bot, Cloud, Database, ArrowRight, Play, Check, Trophy, Star, Users, X
+  Github, Linkedin, Mail, ExternalLink, Calendar, Award, 
+  Target, Shield, Bot, Cloud, Database, ArrowRight, Play, Check, Star, Users, X
 } from 'lucide-react';
 import { FaChevronRight } from 'react-icons/fa';
 
@@ -54,7 +54,6 @@ interface Achievement {
 }
 
 const Portfolio = () => {
-  const [activeSection, setActiveSection] = useState('hero');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
   const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
@@ -66,26 +65,6 @@ const Portfolio = () => {
   const [simResult, setSimResult] = useState<RedTeamResult | null>(null);
   const [isScanning, setIsScanning] = useState(false);
   const [copied, setCopied] = useState(false);
-
-  const navItems = [
-    { id: 'about', label: 'About' },
-    { id: 'missions', label: 'Missions' },
-    { id: 'arsenal', label: 'Arsenal' },
-    { id: 'ops', label: 'Ops Log' },
-    { id: 'arena', label: 'Red Team Arena' },
-    { id: 'achievements', label: 'Achievements' },
-    { id: 'contact', label: 'Contact' },
-  ];
-
-  // Scrollspy
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => entries.forEach((entry) => { if (entry.isIntersecting) setActiveSection(entry.target.id); }),
-      { threshold: 0.25, rootMargin: '-100px 0px -30% 0px' }
-    );
-    document.querySelectorAll('section[id]').forEach((s) => observer.observe(s));
-    return () => observer.disconnect();
-  }, []);
 
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
@@ -260,13 +239,6 @@ const Portfolio = () => {
 
   const filteredProjects = selectedCategory === 'All' ? projects : projects.filter(p => p.category === selectedCategory);
   const categories = ['All', ...Array.from(new Set(projects.map(p => p.category)))];
-
-  // Highlight logic for game feel
-  const getHighlightClass = (itemSkills: string[]) => {
-    if (!hoveredSkill) return '';
-    const matches = itemSkills.some(s => s.toLowerCase().includes(hoveredSkill.toLowerCase()) || hoveredSkill.toLowerCase().includes(s.toLowerCase()));
-    return matches ? 'ring-2 ring-yellow-400/70 shadow-[0_0_15px_rgba(234,179,8,0.3)] scale-[1.01] border-yellow-400/40' : '';
-  };
 
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-200 font-sans">
